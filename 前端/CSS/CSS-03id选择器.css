@@ -1,0 +1,10 @@
+#id001{
+    border:1px solid yellow;
+    font-size: 30px;
+    color:blue;
+}
+#id002{
+    border: 5px dotted blue;
+    color:red;
+    font-size: 20px;
+}

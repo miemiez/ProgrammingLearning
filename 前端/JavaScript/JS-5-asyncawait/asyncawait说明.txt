@@ -1,0 +1,43 @@
+一.async函数定义的方式：
+    1.async function myFunc(){
+        //function body here
+    }
+
+    2.const myFunc = async () => {
+
+    }
+
+二.async函数将以三种方式之一返回（总之就是一定是返回一个promise）：
+    1.如果函数没有返回任何内容，它将返回一个解析值为 undefined 的 promise。
+    2.如果函数返回了一个非 promise 值，它将返回一个解析为该值的 promise。
+    3.如果从函数返回一个承诺，它只会返回那个承诺
+
+三.await关键字的使用
+    1.await关键字只在异步函数中有用
+    2.await关键字，返回承诺的已解决值。由于 promise 在不确定的时间内解决，
+      await 停止或暂停我们的async函数的执行，直到给定的 promise 得到解决。
+    3.可以利用这种暂停函数执行的机制来实现如：需要到数据库得到查到的结果，再将结果返回给下一个await调用。（处理Promise依赖）
+    4.如果不需要前面await的返回值作为参数传入的话，则可以利用以下方式处理：(处理非依赖的Promise)
+        async function concurrent(){
+            const firstValue = firstAsyncThing();
+            const secondValue = secondAsyncThing();
+            console.log(await firstAsyncThing,await secondAsyncThing);
+        }
+        【使用 concurrent() 函数，两个 promise 的异步操作可以同时运行。如果可能的话，我们希望尽快开始每个异步操作！】
+
+四.await Promise.all()和Promise.all()方法的比较：
+    Promise.all() 和 await Promise.all() 都是常用的方法，具体使用取决于代码的需求和编程风格。
+
+    一般情况下，如果在异步函数中需要等待多个 Promise 并且对它们的结果进行处理，使用 await Promise.all()
+    是一种常见且方便的方式。它允许你使用 await 关键字来等待所有 Promise 完成，并将它们的解决值作为数组返回。
+    这样可以更清晰地表达代码的意图和顺序，并且可以直接在数组中访问结果。
+
+    如果更习惯使用 Promise 链式调用或在其他上下文中需要处理多个 Promise 的结果，使用普通的 Promise.all()
+    可能更适合。它返回一个 Promise 对象，你可以使用 .then() 方法处理解决值的数组，或使用 .catch() 方法处理
+    拒绝的原因。这种方式适用于需要将多个异步操作结果串联起来或对它们进行其他复杂的处理逻辑的情况。
+
+    Promise.all() 返回一个 Promise 对象，该 Promise 在所有输入的 Promise 都解决后才会解决。它的解决值是一
+    个包含所有 Promise 解决值的数组，按照输入的 Promise 顺序排列。
+
+    await Promise.all() 在等待所有输入的 Promise 解决后，将返回一个数组，其中包含所有 Promise 解决值。它在
+    异步函数内部使用 await 关键字等待 Promise 完成，并将解决值直接返回。

@@ -1,0 +1,48 @@
+js中的this和java中的一样，也是隐式参数，但它与函数运行时上下文相关。
+
+一.如果一个定义的函数落单，不属于任何对象，则函数执行时，全局对象window被当作this，
+    window对象的name属性是空串
+    function study(subject){
+        console.log(this.name + '在学习' + subject);
+    }
+    study("js"); //在学习js
+
+二.同样的函数，如果作为对象的方法
+    let stu = {
+        name:"小白",
+        study
+    }
+    这种情况下会将当前对象作为this
+
+三.通过函数的call()方法，还能改变this对象的指向，可以将任意对象视为this
+    let stu02 = {
+        name:"小黑"
+    };
+    study.call(stu02,"js");
+    这回study执行时，就把call的第一个参数stu02作为this
+
+四.一个例外是箭头函数中的this，在箭头函数内出现的this，要以外层this理解
+    正常匿名函数：
+        let stu = {
+            name:"小花",
+            friends:["小白","小黑","小明"],
+            play:function(){
+                this.friends.forEach(function(e){
+                    console.log(this.name + "与" + e + "在玩耍");
+                });
+            }
+        } 
+        stu.play();
+        //运行之后的返回值为：与小白在玩耍 与小黑在玩耍 与小明在玩耍
+        //this.name所在的函数是【落单】函数，因此this代表window
+
+    箭头函数：
+        let stu = {
+            name:"小花",
+            friends:["小白","小黑","小明"],
+            play:function(){
+                this.friends.forEach(e => console.log(this.name + "与" + e + "在玩耍"));
+            }
+        }
+        stu.play();
+        //运行之后的返回值为：小花与小白在玩耍 小花与小黑在玩耍 小花与小明在玩耍

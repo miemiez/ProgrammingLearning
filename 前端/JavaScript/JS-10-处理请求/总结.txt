@@ -1,0 +1,18 @@
+在本课中，我们学习了如何使用 Fetch API 和async/await关键字发出 GET 和 POST 请求。回顾一下前面练习中涵盖的概念：
+    （1）GET 和 POST 请求可以通过多种方式创建。
+    （2）我们可以使用fetch() 和 async/await从 API 异步请求数据。
+    （3）Promises 是一种 JavaScript 对象，表示最终将从请求返回数据。
+    （4）该fetch()函数可用于创建请求并将返回承诺。
+    （5）我们可以链接.then()方法来处理fetch()函数返回的承诺。
+    （6）关键字async用于创建返回承诺的异步函数。
+    （7）关键字await只能与用async关键字声明的函数一起使用。
+    （8）关键字await在等待承诺解决时暂停程序。
+    （9）这一章学习了有关使用fetch()、async和await的异步请求的所有信息！
+
+指示
+    尝试使用浏览器和代码来发出 GET 和 POST 请求。要向 Rebrandly API 发出 POST 请求，
+    请确保分配您apiKey的 Rebrandly API 密钥并运行代码！
+
+
+fetch() 方法用于创建网络请求，但是它本身并不发送请求，而是返回一个 Promise 对象，
+该 Promise 对象在响应可用时解决为 Response 对象。因此，它不是一个直接发送请求的方法。

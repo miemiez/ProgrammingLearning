@@ -1,0 +1,121 @@
+/*
+    该position属性允许您指定元素的位置。
+        当设置为 时relative，元素的位置是相对于它在页面上的默认位置的。
+        当设置为 时absolute，元素的位置是相对于其最近定位的父元素的。它可以固定到网页的任何部分，但当页面滚动时，该元素仍会与文档的其余部分一起移动。
+        当设置为 时fixed，元素的位置可以固定到网页的任何部分。无论如何，该元素都将保留在视图中。
+        设置为 时sticky，当用户滚动其父容器时，元素可以固定在定义的偏移位置。
+        元素z-index的 指定当元素与其他元素重叠时，该元素在页面上显示多远或多远。
+        该display属性允许您控制元素在文档中垂直和水平流动的方式。
+        inline元素占用尽可能少的空间，不能手动调整width或height。
+        block元素占用其容器的宽度，并且可以手动调整heights.
+        inline-block元素可以有 setwidth和height，但它们也可以并排出现并且不占用整个容器的宽度。
+        该float属性可以在网页上尽可能向左或向右移动元素。
+        您可以使用该属性清除元素的左侧或右侧（或两者）clear。
+*/
+body {
+    background-color: #FFF;
+    margin:0 auto;
+  }
+  
+  header {
+    background-color: #466995;
+    border-bottom: 1px solid #466995;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  ul {
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  li {
+    color: #FFF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 80px;  
+  }
+  
+  li:hover {
+    color: #DBE9EE;
+  }
+  
+  h1 {
+    color: #466995;
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    color: #333;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 26px;
+    font-weight: 100;
+    margin: 0 auto 20px auto;
+  }
+  
+  h3 {
+    color: #466995;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 30px;
+  }
+  
+  h4 {
+    color: #466995;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase
+  }
+  
+  p {
+    color: #333;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 18px;
+  }
+  
+  footer {
+    background-color: #DBE9EE;
+    text-align: center;
+    height: 100px;
+  }
+  
+  .welcome {
+    background-color: #DBE9EE;
+    box-sizing: border-box;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 50px;
+  }
+  
+  .question {
+    text-align: center;
+    position: relative;
+    top: 40px;
+  }
+  
+  .answer {
+    border: 1px solid #466995;
+    margin: 20px;
+    display: inline-block;
+  }
+  
+  .answer:hover {
+    background: #C0D6DF;
+    color: #FFF;
+  }

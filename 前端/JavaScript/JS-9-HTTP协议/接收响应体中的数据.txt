@@ -1,0 +1,13 @@
+接收响应体中的数据可以是多种类型，具体取决于服务器返回的数据内容以及你在前端的处理方式。以下是一些常见的响应体数据类型：
+
+（一）字符串：响应体中的数据以字符串形式返回，例如文本内容、HTML、XML 等。
+    你可以直接将响应体作为字符串处理或者进一步解析和处理。
+
+（二）JSON 对象：响应体中的数据以 JSON 格式返回，通常用于传输结构化数据。
+    你可以使用 response.json() 方法将响应体解析为 JavaScript 对象。
+
+（三）Blob 对象：响应体中的数据可以是二进制数据，例如图像、音频、视频等。
+    你可以使用 response.blob() 方法将响应体解析为 Blob 对象。
+
+（四）ArrayBuffer 或 TypedArray：响应体中的数据可以是二进制数据的 ArrayBuffer 或 TypedArray（例如 Uint8Array、Float32Array 等）。
+    你可以使用 response.arrayBuffer() 方法将响应体解析为 ArrayBuffer 对象或相应的 TypedArray。

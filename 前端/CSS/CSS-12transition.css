@@ -1,0 +1,37 @@
+/*
+    transition 属性用于在元素状态发生变化时，为元素添加过渡效果，从而实现平滑的动画效果。它可以控制多个属性在不同的时间、持续时间和时间函数中进行过渡。transition 属性通常用于悬停、聚焦或添加类等事件中。
+
+    transition 属性由以下几个子属性组成：
+
+        1.transition-property：指定要过渡的 CSS 属性的名称，多个属性可以用逗号分隔。
+
+        2.transition-duration：指定过渡的持续时间，以秒（s）或毫秒（ms）为单位。
+
+        3.transition-timing-function：指定过渡的时间函数，用于控制过渡的速度变化。
+            常用的时间函数包括：linear（匀速）、ease（慢进快出）、ease-in（慢进）、ease-out（快出）和 ease-in-out（慢进慢出）等。
+
+        4.transition-delay：指定过渡开始之前的延迟时间，以秒（s）或毫秒（ms）为单位。
+
+        5.[Shorthand]transition:transition-property transition-duration transition-timing-function transition-delay;
+*/
+
+/*
+    简写转换规则比一组单独的transition-<property>规则有一个优势：您可以描述多个属性的唯一转换，并将它们组合起来。
+    要组合转换，请在规则中的 分号 前添加一个 逗号 。在逗号之后，使用相同的速记语法。例如：
+
+        transition: color 1s linear,
+        font-size 750ms ease-in 100ms;
+
+    上面的代码一次转换两个属性。文本颜色在一秒内以线性时间转换，没有延迟。
+    同时，字体大小的转换超过 750 毫秒，具有计时ease-in和 100 毫秒的延迟。这种“链接”是表达复杂动画的强大工具。
+*/
+
+/*
+    即使使用简写，为许多属性指定转换也可能很乏味。对多个属性使用相同的持续时间、计时函数和延迟是很常见的。
+    在这种情况下，您可以将transition-property值设置为all。这将对所有属性应用相同的值。为此，您可以使用allas 的值transition-property。
+    all意味着每个更改的值都将以相同的方式转换。您可以使用all单独的过渡属性或速记语法。这允许您用一行描述许多属性的转换：
+
+        transition: all 1.5s linear 0.5s;
+        
+    在此示例中，任何更改都将在半秒延迟后以线性计时在一秒半内进行动画处理。
+*/

@@ -1,0 +1,33 @@
+一：变量的继承与重写
+    正如 CSS 变量受到局部和全局范围的影响一样，它们也遵循标准的 CSS 继承。
+如果未在子元素上显式定义变量，则使用其父变量的值（如果有的话）。记住这
+一点很重要，因为在父元素上设置的某些属性值会被其子元素继承，而有些则不会。
+    提醒一下，宽度、边距、填充和边框不会继承。
+
+    --orange-color我们可以在特定按钮选择器中重新声明一个变量。
+    当--orange-color在特定选择器中引用该变量时，它将是本地选择的橙色。
+    :root {
+    --orange-color: #FF933A;
+    }
+    
+    body {
+    background-color: var(--orange-color);
+    }
+    
+    button {
+    --orange-color: #BF6317;
+    color: var(--orange-color);
+    border: 1px solid black;
+    }
+
+
+二：变量的回退值（Fallback Values）
+    回退值可以作为var()函数的第二个和可选参数提供。顾名思义，如果作为第一个参
+    数给出的变量无效，将使用它们。
+
+    声明回退值的示例如下：
+    body {
+    background: var(--main-background-color, #F3F3F3);
+    }
+    如果--main-background-color的值未在样式表中明确定义或返回非颜色值，则
+    使用回退值#F3F3F3。

@@ -1,0 +1,15 @@
+一.JavaScript 中级编程学习的内容:
+    (1)创建类并使用继承来最小化冗余
+    (2)使用 JavaScript 模块定义可重用逻辑
+    (3)确定柯里化和提升对 JavaScript 底层工作方式的影响
+    (4)使用 Promise 和 async/await 编写异步 JavaScript
+    (5)使用请求创建对各种 API 的调用
+    (6)识别并处理错误
+    (7)了解 JavaScript 中的并发模块和事件循环
+
+
+二.前端框架React
+
+三.学习Node.js
+
+四.学习JavaScript单元测试

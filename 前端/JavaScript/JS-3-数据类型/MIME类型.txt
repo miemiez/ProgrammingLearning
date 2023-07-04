@@ -1,0 +1,21 @@
+MIME（Multipurpose Internet Mail Extensions）是一种用于标识互联网上不同类型数据的标准，
+它定义了一种格式，用于表示数据的媒体类型（Media Type）。MIME类型通常由两部分组成：
+主类型（major type）和子类型（sub type），之间用斜杠（/）分隔。
+
+
+MIME类型在HTTP协议中广泛应用，用于表示HTTP请求和响应中传输的数据的类型。常见的MIME类型包括：
+    (1) text/plain：纯文本类型
+    (2) text/html：HTML文档类型
+    (3) text/css：CSS样式表类型
+    (4) application/json：JSON数据类型
+    (5) application/xml：XML数据类型
+    (6) application/pdf：PDF文档类型
+    (7) image/jpeg：JPEG图像类型
+    (8) image/png：PNG图像类型
+    (9) audio/mp3：MP3音频类型
+    (10)video/mp4：MP4视频类型
+
+通过在HTTP请求的请求头中指定适当的Content-Type字段，服务器可以识别接收到的数据类型，并做出相应的处理。
+类似地，服务器在HTTP响应的响应头中指定适当的Content-Type字段，告知客户端返回的数据类型。
+
+MIME类型的作用不仅限于HTTP，它还可以用于其他场景，如电子邮件附件、文件上传、数据传输等，用于确定数据的类型和格式。

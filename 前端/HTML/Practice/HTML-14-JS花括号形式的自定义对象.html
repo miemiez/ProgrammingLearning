@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type = "text/javascript">
+        //{}花括号形式的自定义对象
+
+        /*  对象的定义：
+                var 变量名 = {
+                    属性名:值，            //定义一个属性
+                    属性名:值，            //定义一个属性
+                    函数名:function(){}    //定义一个函数
+                };      //空对象
+
+            对象的访问：
+                变量名.属性 / 函数名();
+        */
+        var obj = {
+            name:"XHH",
+            age:12,
+            fun1:function(){
+                alert("我的名字是：" + obj.name + "，我今年" + this.age + "岁了。")
+            }
+        };
+        alert(typeof(obj));//object
+        obj.fun1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

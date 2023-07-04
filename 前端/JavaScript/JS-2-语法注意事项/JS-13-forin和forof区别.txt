@@ -1,0 +1,41 @@
+一.循环数组:
+    const arr = [1,2,3,4];
+
+    (1)for...in,输出的是数组成员在数组中的索引
+        for(let n in arr){
+            console.log(n);
+        }
+
+    (2)for...of,输出的是数组的成员
+        for(let n of arr){
+            console.log(n);
+        }
+
+二.循环对象：
+    const obj = {n:1,m:2,k:3}
+
+    (1)for...in,输出的是对象的属性名（键）
+        for(let n in obj){
+            console.log(n); //对的属性名
+            console.log(obj[n]) //对象的属性值
+        }
+
+    （2）for...of，不能循环对象（因为对象没有iterator接口）
+
+三.循环数组对象
+    const arrObj = [{name:'张三',job:'开滴滴'},{name:'李四',job:'送外卖'}]
+
+    先用for...of,获取到每个对象，如何再用for...in，获取到每个属性或者属性值
+        for(let nObj of arrObj){
+            console.log(nObj);
+            for(let n in nObj){
+                console.log(n); //获取属性名
+                console.log(nObj[n]); //获取属性值
+            }
+        }
+
+/*
+总结：
+    for in 循环对象；
+    for of 循环数组；
+*/

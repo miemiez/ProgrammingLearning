@@ -1,0 +1,15 @@
+JavaScript对象和JSON对象并不是完全相同的东西，尽管它们之间存在一些相似之处。
+
+    JavaScript对象是一种用于存储和操作数据的数据结构，它由键值对组成，其中键是字符串类型，
+    值可以是任意类型，包括其他对象、数组、函数等。JavaScript对象是一种动态的数据结构，可以随时添加、修改或删除属性。
+
+    JSON（JavaScript Object Notation）是一种数据交换格式，它以文本的形式表示结构化的数据，
+    通常用于在客户端和服务器之间传输数据。JSON对象是指符合 JSON 格式的数据对象，它与 JavaScript对象的语法相似，但有一些细微的差异。JSON对象的属性名必须使用双引号括起来，而 JavaScript对象可以使用双引号或单引号，甚至可以省略引号。
+
+
+总结:
+    尽管 JavaScript对象和JSON对象有一些共同之处，但它们并不是完全相同的概念。
+    在编程中，你可以使用 JavaScript对象来表示和操作数据，并使用 JSON来序列化和反序列化数据以进行传输。
+    当需要将 JavaScript对象转换为 JSON格式时，你可以使用 JSON.stringify() 方法，
+    而当需要将 JSON格式的数据转换为 JavaScript对象时，可以使用 JSON.parse() 方法。
+    这两个方法可以在 JavaScript和 JSON之间进行数据转换。

@@ -1,0 +1,28 @@
+一.请求行（Request Line）：
+    包含请求方法、请求的URL（路径）和HTTP协议的版本号。常见的请求方法有GET、POST、PUT、DELETE等。
+    示例：GET /example HTTP/1.1
+
+二.请求头部（Request Headers）：
+    包含关于请求的附加信息，如请求的主机、用户代理、内容类型等。
+    示例：
+        Host: www.example.com
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.9999.99 Safari/537.36
+        Content-Type: application/json【在GET，DELETE请求中，一般不包含请求体，因此没有实际的请求体内容需要定义内容类型。】
+
+三.空行（Blank Line）：
+    请求头部和请求体之间需要有一个空行。
+
+四.请求体（Request Body）：
+    仅在使用POST、PUT等方法时包含请求的具体数据。请求体通常用于传输表单数据、JSON数据等。
+
+
+综合起来，一个完整的HTTP请求示例如下：
+    POST /api/users HTTP/1.1
+    Host: www.example.com
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.9999.99 Safari/537.36
+    Content-Type: application/json
+
+    {
+    "name": "John Doe",
+    "age": 25
+    }

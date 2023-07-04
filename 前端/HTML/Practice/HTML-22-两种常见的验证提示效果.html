@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var inputObj = document.getElementById("id01");
+            var spanObj = document.getElementById("id02");
+            var buttonObj = document.getElementById("id03");
+            var buttonObj2 = document.getElementById("id04");
+            var patt = /^\w{5,12}$/;
+            var text;
+            var onclickFun = function(){
+                text = inputObj.value;
+                console.log(text);
+                if(patt.test(text)){
+                    //innerHTML  表示起始标签和结束标签中的内容
+                    //innerHTML  这个属性可读，可写
+                    spanObj.innerHTML = "合法输入";
+                }else{
+                    spanObj.innerHTML = "不合法输入";
+                }
+            }
+            buttonObj.onclick = onclickFun;
+            buttonObj2.onclick = onclickFun;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id = "id01" value = "abc"/>
+    <span id = "id02" style="color:red"></span>
+    <button id="id03">校验</button>
+    <button id = "id04">校验二</button>
+</body>
+</html>

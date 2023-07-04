@@ -1,0 +1,11 @@
+div{
+    border: 1px yellow solid;
+    font-size: 30;
+    color: blue;
+}
+
+span{
+    border: 5px dashed blue;
+    font-size: 20;
+    color: yellow;
+}

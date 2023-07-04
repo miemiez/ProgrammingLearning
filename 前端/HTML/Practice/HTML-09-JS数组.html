@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type = "text/javaScript">
+        /*
+        数组的定义方式
+
+        JS中数组的定义：
+
+            格式：
+
+                var 数组名 = [];  //空数组
+
+                var 数组名 = [1,’abc’,true];  //定义数组
+        */
+
+        var arr = [];
+        arr[0] = 12;
+        alert(arr.length);//1
+        arr[2] = "abc";
+        alert(arr.length);//3
+        alert(arr[1]);//undefined
+        //数组的遍历
+        for(var i = 0;i < arr.length;i++){
+            alert(arr[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

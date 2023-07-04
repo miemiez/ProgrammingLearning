@@ -1,0 +1,33 @@
+当使用 fetch API 发送请求时，可以通过请求的 body 属性来设置请求体的内容。
+默认情况下，body 属性接受一个字符串作为请求体的内容。但是，你可以使用不同的方式来指定不同类型的数据。
+
+（一）字符串: 如果要发送字符串作为请求体，可以直接将字符串赋值给 body 属性。
+    fetch(url, {
+    method: 'POST',
+    body: 'This is a string'
+    });
+
+（二）对象: 如果要发送对象作为请求体，需要先将对象转换为字符串，通常使用 JSON.stringify() 方法将对象序列化为 JSON 字符串。
+    const data = {
+    name: 'John',
+    age: 25
+    };
+
+    fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(data)
+    });
+
+（三）FormData: 如果要发送表单数据，可以使用 FormData 对象来构建请求体。
+    const formData = new FormData();
+    formData.append('username', 'john');
+    formData.append('password', 'secret');
+
+    fetch(url, {
+    method: 'POST',
+    body: formData
+    });
+
+
+需要根据实际需求选择适合的数据类型来发送请求体的数据。在发送请求时，
+确保根据服务器的要求设置正确的请求头（例如 Content-Type）来指定请求体的格式和编码方式。

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type = "text/javascript">
+        //静态onchange事件
+        function onchangeFun(){
+            alert("静态onchange事件");
+        }
+
+        //动态onchange事件
+        window.onload = function(){
+            var onchangeObj = document.getElementById("id03");
+            onchangeObj.onchange = function(){
+                alert("动态onchange事件");
+            }
+        }
+    </script>
+</head>
+<body>
+    <select onchange="onchangeFun();">
+        <option selected = "selected">---初始男角色---</option>
+        <option>空</option>
+        <option>凯亚</option>
+        <option>卢锅巴</option>
+    </select><br/>
+
+    <select id = "id03">
+        <option selected = "selected">---初始女角色---</option>
+        <option>荧</option>
+        <option>丽莎</option>
+        <option>刻晴</option>
+    </select>
+</body>
+</html>

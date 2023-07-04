@@ -1,0 +1,44 @@
+一.状态行（Status Line）：
+    包含了HTTP协议版本号、状态码和状态描述。
+    例如：HTTP/1.1 200 OK。
+
+二.响应头部（Response Headers）：
+    包含了与响应相关的信息，如日期、服务器信息、内容类型、内容长度等。每个头部字段都由一个字段名和对应的值组成，
+    用冒号分隔。多个头部字段之间用换行符分隔。
+
+三.空行（Blank Line）：
+    即两个换行符，用于分隔响应头部和响应体。
+
+四.响应体（Response Body）：
+    实际的响应内容，可以是HTML页面、JSON数据、文件等。
+
+
+以下是一个示例的HTTP响应报文的结构：
+
+    HTTP/1.1 200 OK
+    Date: Tue, 18 May 2023 12:00:00 GMT
+    Server: Apache/2.4.38 (Unix)
+    Content-Type: text/html; charset=UTF-8
+    Content-Length: 1234
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Example Page</title>
+    </head>
+    <body>
+        <h1>Hello, World!</h1>
+    </body>
+    </html>
+
+    在上述示例中，状态行为 HTTP/1.1 200 OK 表示响应使用的HTTP协议版本是1.1，状态码为200，状态描述为OK。
+    响应头部包含了日期、服务器信息、内容类型、内容长度等信息。空行用于分隔响应头部和响应体，而响应体中包含
+    了一个简单的HTML页面。
+
+    需要注意的是，HTTP响应报文的结构是按照HTTP协议规范定义的，实际的响应报文内容可能会根据具体的应用和服务
+    器配置而有所变化。
+
+
+
+
+

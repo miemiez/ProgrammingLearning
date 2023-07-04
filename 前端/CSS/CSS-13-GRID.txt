@@ -1,0 +1,36 @@
+1.在父类中设置display: grid;
+2.设置表格模板，规定表格的大小格式：
+    fr:占剩余像素的比例；第一列占（1/1+2）
+        grid-template-rows: 第一行占px大小  第二行占px大小;
+        grid-template-columns: 1fr  50px  2fr;
+    
+
+    shorthand：
+        grid-template: 第一行占px大小  第二行占px大小 1fr  50px  2fr;
+    如果每个模块大小相等则可以：
+        grid-template: repeat(3, 100px);
+    grid-template-areas可以设置各个区域在表格模板中的位置：
+        grid-template-areas: "header header"
+                             "nav nav"
+                             "left right"
+                             "footer footer";
+
+3.在表格子类中可以设定，每个表格占的行列数
+    grid-column：1 / 3; 
+    grid-row:1 / span 2; //代表这个格子占从第一行开始跨2行，从第一列开始也跨2列
+    
+    shorthand：
+        grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end;
+        grid-area:header;
+
+
+4.网格布局是二维的：它们有一行或内联轴和一列或块轴。
+    justify-items:     指定单个元素应如何分布在行轴上(在自己所处的网格中)
+    justify-content:   指定元素组应如何分布在行轴上
+    justify-self:      指定单个元素应如何相对于行轴定位自身(在自己所处的网格中)
+    align-items:       指定单个元素应如何分布在列轴上(在自己所处的网格中，相对于该行的其他元素)
+    align-content:     指定元素组应如何分布在列轴上
+    align-self:        指定单个元素应如何相对于列轴定位自身(在自己所处的网格中)
+    grid-auto-rows:    指定隐式添加到网格的行的高度
+    grid-auto-columns: 指定隐式添加到网格的列的宽度
+    grid-auto-flow:    指定应在哪个方向创建隐式元素

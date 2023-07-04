@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type = "text/javascript">
+        var patt = /^\w{5,12}$/;
+        //表示要求字符串中，是否包含字母e
+        //var patt = new RegExp("e");
+        //var patt = /e/;        //也是正则表达式对象
+        //var patt = /[a,b,c]/;  //表示要求字符串中，包含字母a或b或c
+        //var patt = /[a-z]/;    //表示要求字符串中，包含a到z所有的字母
+        //var patt = /\w/;       //表示要求字符串中，包含字母，数字，下划线
+        //var patt = /a+/;       //表示要求字符串中，包含至少1个a
+        //var patt = /a*/;       //表示要求字符串中，包含0个或多个a
+        //var patt = /a?/;       //表示要求字符串中，包含0个或1个a
+        //var patt = /a{3}/;     //表示要求字符串中，包含连续3个a
+        //var patt = /a{3,5}/;   //表示要求字符串中，包含至少连续3个a，至多5个连续的a
+        //var patt = /a{3,}/;    //表示要求字符串中，包含至少连续3个a
+        //var patt = /a$/;       //表示要求字符串，必须以a结尾
+        //var patt = /^a/;       //表示要求字符串，必须以a打头
+
+        //问题：var patt = /a{3,5}/;最大什么时候有用
+        //要求字符串中包含至少3个连续的a，至多5个连续的a，要求字符串从头到尾都完全匹配，且仅能是a。
+        var patt1 = /^a{3,5}$/;
+        var str = "aaaaa";
+        alert(patt1.test(str));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

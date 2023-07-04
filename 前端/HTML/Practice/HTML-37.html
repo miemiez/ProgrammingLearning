@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WorkAround</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/CSS-18.css" />
+  </head>
+  <body>
+    <main>
+      <!-- The roles and companies <section>s are dynamically created in main.js with renderInputButtons() -->
+       <div>
+         <h3>Select a role:</h3>
+         <label><input type="radio" name="role" value="CTO">CTO</label>
+         <label><input type="radio" name="role" value="Technical Lead">Technical Lead</label>
+         <label><input type="radio" name="role" value="SoftWare Engineer II">SoftWare Engineer II</label>
+         <label><input type="radio" name="role" value="SOftWare Engineer I">SoftWare Engineer I</label>
+       </div>
+       <div>
+        <h3>Select a company:</h3>
+        <label><input type="radio" name="company" value="Big Data Inc">Big Data Inc</label>
+        <label><input type="radio" name="company" value="Medium Data Inc">Medium Data Inc</label>
+        <label><input type="radio" name="company" value="Small Date Inc">Small Date Inc</label>
+       </div>
+       <div>
+        <section id="resultsContainer">
+          <h3>Details:</h3>
+          <p id="salarySelected"> ... </p>
+          <p id="salaryAverageByRole"> ... </p>
+          <p id="salaryAverageByCompany"> ... </p>
+          <p id="salaryAverageIndustry"> ... </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

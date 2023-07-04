@@ -1,0 +1,7 @@
+    .artist:nth-child(even) {
+    background: var(--group-two-background-color,var(--backup-color-1,var(--backup-color-2)));
+    }
+
+    这段 CSS 代码中，.artist:nth-child(even)是一个 CSS 选择器，它的意思是选择
+    所有 class 为 "artist" 的偶数元素。
+    如果要选择奇数元素可以使用:nth-child(odd)这个伪类。

@@ -1,0 +1,56 @@
+html{
+    height: 100%;
+    background-color: rgb(18, 24, 42);
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+  }
+  
+  body{
+    height: 100%;
+  }
+  
+  main{
+    display: flex;
+    justify-content: center;
+    margin: 15% 2%;
+  }
+  
+  div{
+    padding: 20px;
+    border: 1px solid white;
+    width:30%;
+  }
+  
+  section{
+    width: 100%;
+  }
+  
+  h3{
+    height: 2em;
+  }
+  
+  .option{
+    margin-bottom: 0.5em;
+  }
+  
+  input{
+    display:block;
+    margin-right: 7px;
+  }
+  
+  #roleInputs{
+    flex-grow: 1;
+  }
+  
+  #companyInputs{
+    flex-grow: 1;
+  }
+  
+  #resultsContainer{
+    flex-grow: 2; 
+  }
+  
+  input{
+    background-color: rgb(18, 24, 42);
+    border-color: white;
+  }
