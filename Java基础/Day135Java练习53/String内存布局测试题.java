@@ -1,0 +1,29 @@
+package Day135Java练习53;
+
+public class String内存布局测试题 {
+	public static void main(String[] args) {
+		String s1 = "hspedu";
+		Animal a = new Animal(s1);
+		Animal b = new Animal(s1);
+		System.out.println(a==b);//false
+		System.out.println(a.equals(b));//false
+		System.out.println(a.name == b.name);//true
+		
+		String s4 = new String("hspedu");
+		String s5 = "hspede";
+		System.out.println(s1.equals(s4));//true
+		System.out.println(s1==s4);
+		System.out.println(s4==s5);//false
+		String t1 = "hello" + s1;
+		String t2 = "hellohspedu";
+		System.out.println(t1.intern()==t2);//true
+	}
+}
+
+class Animal{
+	String name;
+	
+	public Animal(String name) {
+		this.name = name;
+	}
+}
