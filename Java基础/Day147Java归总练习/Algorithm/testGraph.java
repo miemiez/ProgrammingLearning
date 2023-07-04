@@ -1,7 +1,4 @@
-package Day0619.graphTraverser;
-
-import Day0619.trainNetwork.Graph;
-import Day0619.trainNetwork.Vertex;
+package Day147Java归总练习;
 
 class TestGraph {
     private Graph testGraph;

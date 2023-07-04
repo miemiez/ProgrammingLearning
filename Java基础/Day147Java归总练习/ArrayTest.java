@@ -1,4 +1,4 @@
-package Day0607;
+package Day147Java归总练习;
 
 public class ArrayTest {
     public static void main(String[] args) {

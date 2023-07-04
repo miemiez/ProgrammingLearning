@@ -1,6 +1,4 @@
-package Day0619.dijkstra;
-
-import Day0619.trainNetwork.Vertex;
+package Day147Java归总练习;
 
 public class Edge {
     private Vertex start;

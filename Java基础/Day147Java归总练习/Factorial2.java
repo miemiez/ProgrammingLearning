@@ -1,4 +1,4 @@
-package Day0610;
+package Day147Java归总练习;
 
 public class Factorial2 {
         public static int recursiveFactorial(int n) {

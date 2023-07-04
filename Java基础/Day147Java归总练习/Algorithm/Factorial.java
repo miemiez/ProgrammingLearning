@@ -1,4 +1,4 @@
-package Day0617.factorial;
+package Day147Java归总练习;
 
 public class Factorial {
     public static int iterativeFactorial(int n) {

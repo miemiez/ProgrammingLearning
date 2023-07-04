@@ -1,4 +1,4 @@
-package Day0608;
+package Day147Java归总练习;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,6 +16,7 @@ public class RegExp11 {
         3. /video/BV1fh411y7R8?p=894&spm... 匹配 (\/[\w-?=/&%.#]*)?$
          */
         String regStr = "^((http|https);//)([\\w-]+\\.)+[\\w-]+(\\/[\\w-?=/&%.#]*)?$";
+        String regstr = "^((http|https)://)([\\w-]+\\.)+[\\w-]+(/[\\w-?=/&%.#]*)?$";
 
         Pattern pattern = Pattern.compile(regStr);
         Matcher matcher = pattern.matcher(content);

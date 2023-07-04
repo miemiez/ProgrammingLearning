@@ -1,4 +1,4 @@
-package Day0615.mycharstream1;
+package Day147Java归总练习;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

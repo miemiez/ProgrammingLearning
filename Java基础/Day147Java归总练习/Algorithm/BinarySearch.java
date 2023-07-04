@@ -1,4 +1,4 @@
-package Day0617.binarySearch;
+package Day147Java归总练习;
 
 public class BinarySearch {
     public static int search(int[] arr,int target) {

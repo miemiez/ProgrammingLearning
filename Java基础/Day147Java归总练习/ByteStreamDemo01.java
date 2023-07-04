@@ -1,4 +1,4 @@
-package Day0615.mybytestream1;
+package Day147Java归总练习;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

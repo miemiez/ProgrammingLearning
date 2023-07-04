@@ -1,4 +1,4 @@
-package Day0611;
+package Day147Java归总练习;
 @SuppressWarnings({"all"})
 public class Debug {
 

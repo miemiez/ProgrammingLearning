@@ -1,4 +1,4 @@
-package Day0615;
+package Day147Java归总练习;
 
 public class Engine {
     public Engine(double v, int i) {

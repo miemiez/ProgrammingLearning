@@ -1,4 +1,4 @@
-package Day0609;
+package Day147Java归总练习;
 
 public class SinoTibetan extends Language {
     public SinoTibetan(String name,int numSpeakers) {

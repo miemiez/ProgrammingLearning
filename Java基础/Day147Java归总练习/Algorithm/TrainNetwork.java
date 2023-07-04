@@ -1,4 +1,4 @@
-package Day0619.trainNetwork;
+package Day147Java归总练习;
 
 public class TrainNetwork {
     public static void main(String[] args) {
