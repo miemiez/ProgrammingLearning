@@ -1,0 +1,26 @@
+一.相关子查询题目：
+    相关子查询是一个子查询，它依赖于外部查询的结果。它通常在子查询中引用了外部查询的列或表，用于根据外部查询的每一行来执行子查询。
+    查询员工中工资大于本部门平均工资的员工的department_name，salary和其department_id
+     SELECT employee_name,salary,department_id
+     FROM employees02 e1
+     WHERE salary > (
+                        SELECT AVG(salary)
+                        FROM employees02 e2
+                        WHERE department_id = e1.`department_id`
+     );
+
+
+    关于子查询的结论：
+        在SELECT中，除了 GROUP BY 和 LIMIT 之外，其他位置都可以声明子查询；
+
+        SELECT ...,...,...(存在聚合函数)
+        FROM ... (LEFT/RIGHT) JOIN ... ON 多表的连接条件
+        (LEFT/RIGHT) JOIN ... ON ...
+        WHERE 不包含聚合函数的过滤条件
+        GROUP BY ...,...
+        HAVING 包含聚合函数的过滤条件
+        ORDER BY ...,... (ASC/DESC)
+        LIMIT ...,...
+
+二.EXISTS和NOT EXISTS关键字
+    关联子查询通常也会和EXISTS操作符一起来使用，用来检查在子查询中是否存在满足条件的行。

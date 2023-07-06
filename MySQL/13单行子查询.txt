@@ -1,0 +1,36 @@
+单行操作符：
+    =,!=,>,>=,<,<=
+
+子查询的编写技巧（或步骤）：①从里往外写；②从外往里写。
+
+题目1：
+    查询工资大于149号员工工资的员工的信息
+        SELECT employee_id,EmployeeName FROM employees 
+        WHERE salary > (SELECT salary FROM employees WHERE employee_id = 149);
+
+题目2：
+    返回job_id与141号员工相同，salary比143号员工多的员工姓名，job_id和工资
+        SELECT job_id,salary FROM employees
+        WHERE job_id = (SELECT job_id FROM employees WHERE employee_id = 141) AND salary > (SELECT salary FROM employees WHERE employee_id = 143);
+
+题目3：
+    查询与141号员工的manager_id和department_id相同的其他员工的employee_id，manager_id，department_id
+    方法一：
+        SELECT employee_id,manager_id,department_id FROM employees
+        WHERE manager_id IN (SELECT manager_id FROM employees WHERE employee_id = 141)
+        AND department_id IN (SELECT department_id FROM employees WHERE employee_id = 141)
+        AND employee_id <> 141;
+    方法二(了解)：
+        SELECT employee_id,manager_id,department_id FROM employees
+        WHERE (manager_id,department_id) = (
+            SELECT manager_id,department_id
+            FROM employees
+            WHERE employee_id = 141
+        )
+        AND employee_id <> 141;
+
+题目4：
+    查询 最低工资 大于 50号部门最低工资 的部门id和其最低工资
+        SELECT department_id,MIN(salary) m FROM employees
+        GROUP BY department_id
+        HAVING m > (SELECt MIN(salary) FROM employees WHERE department_id = 100);

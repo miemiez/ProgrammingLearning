@@ -1,0 +1,16 @@
+分页
+    mysql使用limit实现数据的分页显示
+    公式：LIMIT  (pageNo-1)*pageSize,pageSize;
+
+    需求：每页显示20条记录，此时显示第一页
+    SELECT employee_id,last_name
+    FROM employees
+    LIMIT 0,20;
+
+    此时显示第二页
+    SELECT employee_id,last_name
+    FROM employees
+    LIMIT 20,20;
+
+    使用LIMIT 1，这样SELECT语句只要返回一条记录即可，这样的好处就是SELECT不需要扫描完整的表，只需要检索到一条符合条件的记录即可返回。
+    

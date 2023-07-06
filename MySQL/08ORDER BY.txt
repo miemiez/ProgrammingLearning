@@ -1,0 +1,18 @@
+按照salary从高到低的顺序显示员工信息
+    SELECT employee_id,last_name,salary FROM employees ORDER BY salary DESC;
+
+升序(默认)：ASC(ascend);
+降序：DESC(descend);
+
+可以使用列的别名，进行排序【列的别名只能在ORDER BY中使用，不能在WHERE中使用】：
+    SELECT employee_id,salary,salary*12 annual_sal FROM employees
+    ORDER BY annual_sal;
+
+【！！！强调！！！】
+    WHERE 需要声明在 FROM 后，ORDER BY 之前。
+
+二级排序：
+    练习：显示员工信息，按照department_id的降序排序，salary的升序排序
+        SELECT employee_id,salary,department_id
+        FROM employees
+        ORDER BY department_id DESC,salary ASC;
