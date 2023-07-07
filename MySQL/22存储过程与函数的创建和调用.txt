@@ -1,0 +1,43 @@
+存储过程：
+    存储过程是一组为了完成特定功能的 SQL 语句集合。使用存储过程的目的是将常用或复杂的工作预先用 SQL 语句写好并用一个指定名称存储起来，
+    这个过程经编译和优化后存储在数据库服务器中，因此称为存储过程。当以后需要数据库提供与已定义好的存储过程的功能相同的服务时，
+    只需调用“CALL存储过程名字”即可自动完成。【是可以没用返回值的】
+
+存储函数：
+    是需要有返回值的
+
+
+一.创建存储过程：
+    CREATE PROCEDURE 存储过程名 (IN|OUT|INOUT 参数名 参数类型,...)
+    [characteristics ...]
+    BEGIN
+        存储过程体
+    END
+
+    DELIMITER：
+        在 SQL 中，DELIMITER 是一个特殊的命令，用于更改 SQL 语句的分隔符。默认情况下，
+        分号 (;) 被用作 SQL 语句的分隔符，表示一个语句的结束。但是在某些情况下，SQL 语句本身可能包含分号，
+        例如存储过程、触发器等。为了解决这个问题，可以使用 DELIMITER 命令来指定一个不同的分隔符。
+        例如：
+            DELIMITER //
+            CREATE PROCEDURE myProcedure()
+            BEGIN
+                -- SQL statements here
+                SELECT * FROM customers;
+            END //
+            DELIMITER ;
+
+    调用存储过程：
+        CALL 存储过程名(参数);
+
+
+二.创建存储函数：
+    CREATE FUNCTION 函数名(参数名 参数类型,...)
+    RETURNS 返回值类型
+    [characteristics]
+    BEGIN
+        函数体  #函数体肯定有 RETURN 语句
+    END
+
+    调用存储函数：
+        SELECT 函数名(参数);

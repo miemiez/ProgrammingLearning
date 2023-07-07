@@ -1,0 +1,36 @@
+一.查看，修改，删除
+    1.使用SHOW CREATE语句查看存储过程和函数的创建信息
+        SHOW CREATE {PROCEDURE | FUNCTION} #存储过程名或函数名
+        例：
+            SHOW CREATE FUNCTION test_db.CountProc;
+    2.使用SHOW STATUS语句查看存储过程和函数的状态信息
+        SHOW PROCEDURE STATUS；
+        SHOW PROCEDURE STATUS LIKE 'show_max_salary';
+        SHOW FUNCTION STATUS LIKE 'email_by_id';
+    3.从information_schema.Routines表中查看存储过程和函数的信息
+        SELECT * FROM information_schema.Routines
+        WHERE ROUTINE_NAME='存储过程或函数的名' [AND ROUTINE_TYPE = {'PROCEDURE | FUNCTION'}];
+    4.存储过程或函数的修改
+        修改存储过程或函数，不影响存储过程或函数功能，只是修改相关特性。使用ALTER语句实现。
+        ALTER {PROCEDURE | FUNCTION} 存储过程或函数的名 [characteristics ...];
+
+        { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA}
+        | SQL SECURITY { DEFINER | INVOKER }
+        | COMMENT 'string'
+    5.存储过程或函数的删除
+        DROP { FUNCTION | PROCEDURE } count_by_idd
+
+
+二.存储过程的优点
+    1.存储过程可以一次编译多次使用
+    2.可以减少开发工作量
+    3.存储过程的安全性强
+    4.可以减少网络传输量
+    5.良好的封装性
+
+
+三.存储过程的缺点
+    1.可移植性差
+    2.调试困难，只有少数DBMS支持存储过程的调试
+    3.存储过程的版本管理很困难
+    4.它不适合高并发的场景

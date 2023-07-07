@@ -1,0 +1,47 @@
+一.视图：
+    一个或多个数据表里的数据的逻辑显示，视图并不存储数据
+    视图即表的映射，修改视图中的数据，表也会更改；反之，修改表中的数据，视图中的数据也会更改。
+
+
+二.创建视图：
+    CREATE VIEW 视图名称 [(字段列表)] AS 查询语句
+    例：
+        方式一：
+        CREATE VIEW vu_emp1
+        AS
+        SELECT employee_id,emp_id,last_name,salary #查询语句中字段的别名会作为视图中字段的名称出现
+        FROM emps；
+        方式二：
+        CREATE VIEW vu_emp2(emp_id,NAME,monthly_sal) #小括号内字段个数与SELECT中字段个数相同
+        AS
+        SELECT employee_id,last_name,salary
+        FROM emps;
+    格式化视图：
+        CREATE VIEW　vu_emp3
+        AS
+        SELECT CONCAT(emp_name,'(',dapt_name,')') emp_info
+        FROM employees02;
+
+
+三.查看视图
+    语法1：查看数据库的表对象，视图对象
+        SHOW TABLES;
+    语法2：查看视图的结构
+        DESCRIBE vu_emp1;
+    语法3：查看视图的属性信息
+        SHOW TABLE STATUS LIKE 'vu_emp1';
+    语法4：查看视图的详细定义信息
+        SHOW CREATE VIEW vu_emp1;
+
+
+四.修改视图
+    ALTER VIEW <视图名> AS <SELECT语句>
+    语法说明如下：
+        <视图名>：指定视图的名称。该名称在数据库中必须是唯一的，不能与其他表或视图同名。
+        <SELECT 语句>：指定创建视图的 SELECT 语句，可用于查询多个基础表或源视图。
+
+
+五.删除视图
+    DROP VIEW <视图名1> [ , <视图名2> …]
+    其中：
+        <视图名>指定要删除的视图名。DROP VIEW 语句可以一次删除多个视图，但是必须在每个视图上拥有 DROP 权限。

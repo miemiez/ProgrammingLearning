@@ -1,0 +1,17 @@
+一.Cascade方式：
+    在父表上update/delete记录时，同步update/delete掉子表的匹配记录
+
+二.Set null方式：
+    在父表上update/delete记录时，将子表上匹配记录的列设为null，但要注意子表的外键列不能为not null
+
+三.No action方式：
+    如果子表中有匹配的记录，则不允许对父表对应候选键进行update/delete操作
+
+四.Restrict方式：
+    同no action，都是立即检查外键约束
+
+五.Set default方式：
+    父表有变更时，子表将外键列设置成一个默认的值，但Innodb不能识别
+
+如果没用指定等级，就相当于Restrict方式，
+对于外键约束，最好采用 ON UPDATA， CASCADE， ON DELETE， RESTRICT 的方式。
