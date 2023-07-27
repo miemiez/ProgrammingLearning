@@ -1,0 +1,2 @@
+Get.toNamed("/login")
+等同于Navigator.pushNamed(context,"/login");
