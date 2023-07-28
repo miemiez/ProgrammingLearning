@@ -111,11 +111,11 @@ class _MyPageState extends State<MyPage> {
               DataUtils.isLogin().then((isLogin) {
                 if (isLogin) {
                   switch (index) {
-                    case 0:
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => MyMessagePage()));
-                      break;
-                  }
+                  case 0:
+                  Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => MyMessagePage()));
+                  break;
+                 }
                 } else {
                   _login();
                 }
@@ -126,7 +126,8 @@ class _MyPageState extends State<MyPage> {
         separatorBuilder: (context, index) {
           return const Divider();
         },
-        itemCount: menuTitles.length + 1);
+        itemCount: menuTitles.length + 1
+      );
   }
 
   _login() async {

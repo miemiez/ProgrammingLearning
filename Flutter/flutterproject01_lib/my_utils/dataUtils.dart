@@ -107,4 +107,22 @@ class DataUtils{
     user.url = sp.getString(SP_USER_URL);
     return user;
   }
+
+  static Future<User?> clearUserInfo() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    bool? isLogin = sp.getBool(SP_IS_LOGIN);
+    //print(isLogin);
+    if (isLogin == null || !isLogin) {
+      return null;
+    }
+    User user = User();
+    user.gender = sp.getString(SP_USER_GENDER);
+    user.name = sp.getString(SP_USER_NAME);
+    user.location = sp.getString(SP_USER_LOCATION);
+    user.id = sp.getInt(SP_USER_ID);
+    user.avatar = sp.getString(SP_USER_AVATAR);
+    user.email = sp.getString(SP_USER_EMAIL);
+    user.url = sp.getString(SP_USER_URL);
+    return user;
+  }
 }

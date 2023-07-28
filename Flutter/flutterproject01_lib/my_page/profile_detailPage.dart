@@ -7,6 +7,7 @@ import 'package:flutterproject01/my_utils/dataUtils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutterproject01/web/net_Utils.dart';
 
+import '../common/event_bus.dart';
 import '../constants.dart';
 import '../models/user_Info.dart';
 
@@ -330,6 +331,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage> {
                 TextButton(onPressed: (){
                   DataUtils.clearLoginInfo();
                   Navigator.pop(context);
+                  eventBus.fire(LogoutEvent());
                 }, child: const Text('退出登录'))
               ],
             ),

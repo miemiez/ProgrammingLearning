@@ -35,11 +35,7 @@ class _MyMessagePageState extends State<MyMessagePage> {
             color: Color(AppColors.APPBAR),
           ),
           bottom: TabBar(
-              tabs: _tabTitles
-                  .map((title) => Tab(
-                text: title,
-              ))
-                  .toList()),
+              tabs: _tabTitles.map((title) => Tab(text: title)).toList()),
         ),
         body: TabBarView(children: [
           const Center(

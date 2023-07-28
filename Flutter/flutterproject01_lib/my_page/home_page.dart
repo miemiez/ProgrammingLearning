@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterproject01/my_page/discovery_page.dart';
+import 'package:flutterproject01/my_page/news_list_page.dart';
+import 'package:flutterproject01/my_page/tweet_page.dart';
 import 'package:flutterproject01/web/login_web.dart';
 import 'package:flutterproject01/widget/navigation_icon_view.dart';
 
@@ -32,7 +35,7 @@ class _HomePageState extends State<HomePage> {
     _pageController = PageController(
       initialPage: _currentIndex,
     );
-    _myPages = [MyPage(),LoginWebPage(),MyPage(),MyPage()];
+    _myPages = [NewsListPage(),TweetPage(),DiscoveryPage(),const MyPage()];
   }
 
   @override
@@ -41,7 +44,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         //TODO 标题
-        title: const Text('开源中国'),
+        title: Text(_appBarTitle[_currentIndex]),
       ),
       body: PageView.builder(
           physics: const NeverScrollableScrollPhysics(),
